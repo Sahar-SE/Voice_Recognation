@@ -6,6 +6,8 @@ var textbox = $("#textbox")
 
 var instructions = $("#instructions")
 
+var 
+
 var content = ''
 
 recognition.continuous = true
@@ -31,20 +33,26 @@ recognition.onerror = () => {
 // During the recording
 
 recognition.onresult = (event) => {
-  var ndx = event.resultIndex;
-  var script = event.results[ndx][0].script
-  content += script
+  var current = event.resultIndex;
+  var transcript = event.results[current][0].transcript
+  content += transcript
   textbox.val(content)
 }
 
 
 
 $("#start-btn").click((event)=> {
+  try{
   if(content.length) {
     content += ''
   }
 
   recognition.start()
+
+}
+catch(error) {
+  recognition.stop();
+}
 })
 
 textbox.on('input', () =>{
