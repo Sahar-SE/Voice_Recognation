@@ -46,3 +46,7 @@ $("#start-btn").click((event)=> {
 
   recognition.start()
 })
+
+textbox.on('input', () =>{
+  content = $(this).val()
+})
