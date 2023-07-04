@@ -32,6 +32,8 @@ recognition.onerror = () => {
 
 recognition.onresult = (event) => {
   var ndx = event.resultIndex;
+  var script = event.results[ndx][0].script
+
 }
 
 
