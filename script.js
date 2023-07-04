@@ -34,7 +34,7 @@ recognition.onresult = (event) => {
   var ndx = event.resultIndex;
   var script = event.results[ndx][0].script
   content += script
-
+  textbox.val(content)
 }
 
 
