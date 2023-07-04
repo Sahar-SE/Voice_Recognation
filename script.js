@@ -31,6 +31,7 @@ recognition.onerror = () => {
 // During the recording
 
 recognition.onresult = (event) => {
+  var ndx = event.resultIndex;
 }
 
 
