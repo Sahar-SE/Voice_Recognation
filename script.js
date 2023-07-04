@@ -10,6 +10,13 @@ var content = ''
 
 recognition.continuous = true
 
+// What will happen when start button clicked
+
+recognition.onstart =  () => {
+  instructions.text("Voice Recognition is on!")
+}
+
+
 $("#start-btn").click((event)=> {
   if(content.length) {
     content += ''
