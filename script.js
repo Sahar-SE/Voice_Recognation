@@ -11,5 +11,7 @@ var content = ''
 recognition.continuous = true
 
 $("#start-btn").click((event)=> {
-    
+  if(content.length) {
+    content += ''
+  }
 })
