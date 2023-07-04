@@ -9,3 +9,7 @@ var instructions = $("#instructions")
 var content = ''
 
 recognition.continuous = true
+
+$("#start-btn").click((event)=> {
+    
+})
