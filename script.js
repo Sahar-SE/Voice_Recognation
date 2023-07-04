@@ -14,4 +14,6 @@ $("#start-btn").click((event)=> {
   if(content.length) {
     content += ''
   }
+
+  recognition.start()
 })
