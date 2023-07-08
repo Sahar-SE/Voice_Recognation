@@ -11,22 +11,27 @@
     <h1 class="text-center mt-5">
       Voice Recognition
     </h1>
-    <form action="index.php" method="post" id="form">
+    <form action="send.php" method="post" id="form">
       <div class="form-group">
-        <textarea id="textbox" rows="6" class="form-control"></textarea>
+        <input id="input-name" rows="6" class="form-control" name="message" name="name"/>
+      </div>
+      <div class="form-group">
+        <textarea id="textbox" rows="6" class="form-control" name="message"></textarea>
       </div>
       <div class="form-gruop">
-        <button id="start-btn" class="btn btn-danger btn-block">
-          Start
+        
+        <button id="stop-btn" class="btn btn-danger btn-block" type="submit">
+          Stop
         </button>
-        <button id="play-btn" class="btn btn-danger btn-block">
-          Play
-        </button>
-        <button id="list-btn" class="btn btn-danger btn-block">
-          List
-        </button>
+        
       </div>
     </form>
+    <button id="play-btn" class="btn btn-danger btn-block">
+      Play
+    </button>
+    <button id="start-btn" class="btn btn-danger btn-block">
+      Start
+    </button>
 
     <p id="instructions">Press the start button for recording your voice!</p>
     <p id="names">salam</p>
