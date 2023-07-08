@@ -4,9 +4,9 @@ var recognition = new speechRecognition()
 
 var textbox = $("#textbox")
 
-var names = $("#names")
-
 var instructions = $("#instructions")
+
+var btnText = $("#start-btn")
 
 var content = ''
 
@@ -48,7 +48,7 @@ $("#start-btn").click((event)=> {
   }
 
   recognition.start()
-
+  btnText.text("Stop")
 
 }
 catch(error) {
@@ -62,22 +62,17 @@ textbox.on('input', () =>{
 
 $("#play-btn").click((event)=> {
   try{
-    const synth = window.speechSynthesis;
-    const voices = synth.getVoices(); 
+    
   if(content.length > 0) {
     const message = new SpeechSynthesisUtterance(content);
     speechSynthesis.speak(message);
-    
-// Set the voice to the second voice in the list
-
-   message.voice = voices[48];
-   console.log(voices[48].name);
-
   }
-  
+  else {
+    instructions.text("Please enter some text")
+  }
 }
 catch(error) {
-  instructions.text("Empty text!")
+  instructions.text("Text finished!")
 }
 })
   
