@@ -4,9 +4,9 @@ var recognition = new speechRecognition()
 
 var textbox = $("#textbox")
 
-var instructions = $("#instructions")
+var names = $("#names")
 
-var 
+var instructions = $("#instructions")
 
 var content = ''
 
@@ -49,6 +49,7 @@ $("#start-btn").click((event)=> {
 
   recognition.start()
 
+
 }
 catch(error) {
   recognition.stop();
@@ -58,3 +59,37 @@ catch(error) {
 textbox.on('input', () =>{
   content = $(this).val()
 })
+
+$("#play-btn").click((event)=> {
+  try{
+    const synth = window.speechSynthesis;
+    const voices = synth.getVoices(); 
+  if(content.length > 0) {
+    const message = new SpeechSynthesisUtterance(content);
+    speechSynthesis.speak(message);
+    
+// Set the voice to the second voice in the list
+const femaleVoice = voices.filter(function(voice) { return voice.name == "Google UK English Female - English (United States)"; })[0];
+   message.voice = femaleVoice;
+
+  }
+}
+catch(error) {
+  instructions.text("Empty text!")
+}
+})
+
+
+// test
+$("#list-btn").click((event)=> {
+const synth = window.speechSynthesis;
+
+var voices = [];
+
+  voices = synth.getVoices();
+  for (let i = 0; i < voices.length; i++) {
+    names.text(voices[48].name + ' (' + voices[i].lang + ')');
+  }
+})
+  
+
