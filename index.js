@@ -69,27 +69,16 @@ $("#play-btn").click((event)=> {
     speechSynthesis.speak(message);
     
 // Set the voice to the second voice in the list
-const femaleVoice = voices.filter(function(voice) { return voice.name == "Google UK English Female - English (United States)"; })[0];
-   message.voice = femaleVoice;
+
+   message.voice = voices[48];
+   console.log(voices[48].name);
 
   }
+  
 }
 catch(error) {
   instructions.text("Empty text!")
 }
-})
-
-
-// test
-$("#list-btn").click((event)=> {
-const synth = window.speechSynthesis;
-
-var voices = [];
-
-  voices = synth.getVoices();
-  for (let i = 0; i < voices.length; i++) {
-    names.text(voices[48].name + ' (' + voices[i].lang + ')');
-  }
 })
   
 
