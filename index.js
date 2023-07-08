@@ -42,7 +42,7 @@ recognition.onresult = (event) => {
 
 
 $("#start-btn").click((event)=> {
-  try{
+
   if(content.length) {
     content += ''
   }
@@ -50,11 +50,9 @@ $("#start-btn").click((event)=> {
   recognition.start()
   btnText.text("Stop")
 
-}
-catch(error) {
-  recognition.stop();
-}
 })
+
+
 
 textbox.on('input', () =>{
   content = $(this).val()
@@ -76,4 +74,9 @@ catch(error) {
 }
 })
   
+document.getElementById("form").addEventListener("submit", function(event) {
+  // Your validation code here
 
+    event.preventDefault();
+
+});
