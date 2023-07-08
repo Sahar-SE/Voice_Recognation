@@ -4,9 +4,9 @@ var recognition = new speechRecognition()
 
 var textbox = $("#textbox")
 
-var names = $("#names")
-
 var instructions = $("#instructions")
+
+var btnText = $("#start-btn")
 
 var content = ''
 
@@ -42,18 +42,19 @@ recognition.onresult = (event) => {
 
 
 $("#start-btn").click((event)=> {
-  try{
+
   if(content.length) {
     content += ''
   }
 
   recognition.start()
+  btnText.text("Stop")
 
+})
 
-}
-catch(error) {
+$("#stop-btn").click((event)=> {
+
   recognition.stop();
-}
 })
 
 textbox.on('input', () =>{
@@ -62,34 +63,23 @@ textbox.on('input', () =>{
 
 $("#play-btn").click((event)=> {
   try{
-    const synth = window.speechSynthesis;
-    const voices = synth.getVoices(); 
+    
   if(content.length > 0) {
     const message = new SpeechSynthesisUtterance(content);
     speechSynthesis.speak(message);
-    
-// Set the voice to the second voice in the list
-const femaleVoice = voices.filter(function(voice) { return voice.name == "Google UK English Female - English (United States)"; })[0];
-   message.voice = femaleVoice;
-
+  }
+  else {
+    instructions.text("Please enter some text")
   }
 }
 catch(error) {
-  instructions.text("Empty text!")
+  instructions.text("Text finished!")
 }
 })
-
-
-// test
-$("#list-btn").click((event)=> {
-const synth = window.speechSynthesis;
-
-var voices = [];
-
-  voices = synth.getVoices();
-  for (let i = 0; i < voices.length; i++) {
-    names.text(voices[48].name + ' (' + voices[i].lang + ')');
-  }
-})
   
+document.getElementById("form").addEventListener("submit", function(event) {
+  // Your validation code here
 
+    event.preventDefault();
+
+});
