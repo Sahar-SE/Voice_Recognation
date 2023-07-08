@@ -52,7 +52,10 @@ $("#start-btn").click((event)=> {
 
 })
 
+$("#stop-btn").click((event)=> {
 
+  recognition.stop();
+})
 
 textbox.on('input', () =>{
   content = $(this).val()
