@@ -1,24 +1,28 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(
-        !empty($_POST['name'])
-        && !empty($_POST['message'])
-    ){
-        $name = $_POST["name"];
-        $message = $_POST["message"];
+if(isset($_POST["submit"])){
+  // Checking for blank fields
+  if($_POST["name"]=="" || $_POST["message"]==""){
+    echo "You forgot a field";
+  }
+    // Sanitize and validate the email address
+    
+    if (!$name || !$message){
+      echo "Please enter your name";
+      echo "Please enter your message";
+    } else {
+      $to = "saharsaba.amiri123@gmail.com";
+      $subject = $_POST['name'];
+      $message = $_POST['message'];
+      $headers = 'From:'. $name . "\r\n";
 
-
-        $to = "saharsaba.amiri123@gmail.com";
-        $subject = "From your app by: {$name}";
-        $body = "Name: {$name}\nMessage: {$message}";
-        $headers = "From: {$name}";
-
-
-        if (mail($to, $subject, $body, $headers)) {
-            echo "Message sent successfully!";
-        } else {
-            echo "Failed to send message.";
-        }
+      // Send the email
+      mail($to, $subject, $message, $headers);
+      
+      print_r("Thank you for your message, I'll try to respond as soon as possible!");
     }
-}
+  }
 ?>
+
+<?php
+ echo "wgy";
+ ?>
