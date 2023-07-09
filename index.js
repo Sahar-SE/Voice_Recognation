@@ -53,8 +53,28 @@ $("#start-btn").click((event)=> {
 })
 
 $("#stop-btn").click((event)=> {
-
   recognition.stop();
+  // send email by using emailjs
+
+  (function () {
+    emailjs.init("TRPIqukCOOdOsgiXe");
+  })();
+
+
+  
+document.getElementById("form").addEventListener("submit", function(event) {
+  // Your validation code here
+    event.preventDefault();
+    emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
+      .then(function(response) {
+        console.log("SUCCESS!", response.status, response.text);
+        // Show success message to the user
+      }, function(error) {
+        console.log("FAILED...", error);
+        // Show error message to the user
+      });
+
+});
 })
 
 textbox.on('input', () =>{
@@ -76,10 +96,4 @@ catch(error) {
   instructions.text("Text finished!")
 }
 })
-  
-document.getElementById("form").addEventListener("submit", function(event) {
-  // Your validation code here
 
-    event.preventDefault();
-
-});
