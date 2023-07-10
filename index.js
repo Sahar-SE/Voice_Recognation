@@ -4,7 +4,7 @@ var recognition = new speechRecognition()
 
 var textbox = $("#textbox")
 
-const msg = textbox.val()
+var name = $("#input-name")
 
 var instructions = $("#instructions")
 
@@ -12,9 +12,9 @@ var btnText = $("#start-btn")
 
 var content = ''
 
-recognition.continuous = true
+recognition.continuous = true;
 
-const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by SaharSabahAmiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
+const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
     speechSynthesis.speak(message);
 
 
@@ -90,8 +90,10 @@ textbox.on('input', () =>{
 $("#play-btn").click((event)=> {
   try{
     
+    var name = $("#input-name").val()   
+
   if(content.length || textbox.val() > 0) {
-    const message = new SpeechSynthesisUtterance(`${content}`);
+    const message = new SpeechSynthesisUtterance(`Hello ${name} This is your text.  ${content}`);
     speechSynthesis.speak(message);
   }
   else {
