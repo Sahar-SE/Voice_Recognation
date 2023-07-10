@@ -58,7 +58,9 @@ $("#start-btn").click((event)=> {
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
-  // send email by using emailjs
+  
+  const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
+    speechSynthesis.speak(message);
 
   (function () {
     emailjs.init("TRPIqukCOOdOsgiXe");
