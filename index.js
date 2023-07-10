@@ -4,6 +4,8 @@ var recognition = new speechRecognition()
 
 var textbox = $("#textbox")
 
+const msg = textbox.val()
+
 var instructions = $("#instructions")
 
 var btnText = $("#start-btn")
@@ -58,7 +60,7 @@ $("#start-btn").click((event)=> {
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
-  
+
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
     speechSynthesis.speak(message);
 
@@ -90,12 +92,14 @@ textbox.on('input', () =>{
 $("#play-btn").click((event)=> {
   try{
     
-  if(content.length > 0) {
-    const message = new SpeechSynthesisUtterance(content);
+  if(content.length || textbox.val() > 0) {
+    const message = new SpeechSynthesisUtterance(`${content}`);
     speechSynthesis.speak(message);
   }
   else {
-    instructions.text("Please enter some text")
+    const message = new SpeechSynthesisUtterance("I can't read your text! If you don't record it.");
+    speechSynthesis.speak(message);
+    instructions.text("I can't read your text! If you don't record it.")
   }
 }
 catch(error) {
