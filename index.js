@@ -12,6 +12,10 @@ var content = ''
 
 recognition.continuous = true
 
+const message = new SpeechSynthesisUtterance("Hello, I am Robo I have been created by SaharSabahAmiri. I am here to help you. Please enter your name and click the start button that I can record your voice.");
+    speechSynthesis.speak(message);
+
+
 // What will happen when start button clicked
 
 recognition.onstart =  () => {
