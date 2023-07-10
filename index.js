@@ -76,10 +76,8 @@ document.getElementById("form").addEventListener("submit", function(event) {
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
       .then(function(response) {
         console.log("SUCCESS!", response.status, response.text);
-        // Show success message to the user
       }, function(error) {
         console.log("FAILED...", error);
-        // Show error message to the user
       });
 
 });
