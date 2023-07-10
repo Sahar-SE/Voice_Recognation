@@ -12,30 +12,29 @@
     <h1 class="text-center mt-5">
       Voice Recognition
     </h1>
-    <form method="post" id="form" action="send.php">
+
+    <form method="post" id="form" action="">
       <div class="form-group">
-        <input id="input-name" rows="6" class="form-control" name="message" name="name"/>
+        <input id="input-name" rows="6" class="form-control" name="message" name="name" placeholder="Enter Your Full Name" required/>
       </div>
       <div class="form-group">
-        <textarea id="textbox" rows="6" class="form-control" name="message"></textarea>
+        <textarea id="textbox" rows="6" class="form-control" name="message" placeholder="Click The Start Button..."  required></textarea>
       </div>
+      <button id="play-btn" class="btn btn-danger btn-block">
+        Play
+      </button>
+      <button id="start-btn" class="btn btn-danger btn-block">
+        Start
+      </button>
       <div class="form-gruop">
-        
         <button id="stop-btn" class="btn btn-danger btn-block" type="submit">
           Stop
         </button>
-        
       </div>
     </form>
-    <button id="play-btn" class="btn btn-danger btn-block">
-      Play
-    </button>
-    <button id="start-btn" class="btn btn-danger btn-block">
-      Start
-    </button>
+   
 
     <p id="instructions">Press the start button for recording your voice!</p>
-    <p id="names">salam</p>
   </div>  
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>

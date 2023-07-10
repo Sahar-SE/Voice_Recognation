@@ -4,6 +4,8 @@ var recognition = new speechRecognition()
 
 var textbox = $("#textbox")
 
+const msg = textbox.val()
+
 var instructions = $("#instructions")
 
 var btnText = $("#start-btn")
@@ -11,6 +13,10 @@ var btnText = $("#start-btn")
 var content = ''
 
 recognition.continuous = true
+
+const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by SaharSabahAmiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
+    speechSynthesis.speak(message);
+
 
 // What will happen when start button clicked
 
@@ -54,7 +60,9 @@ $("#start-btn").click((event)=> {
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
-  // send email by using emailjs
+
+  const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
+    speechSynthesis.speak(message);
 
   (function () {
     emailjs.init("TRPIqukCOOdOsgiXe");
@@ -68,10 +76,8 @@ document.getElementById("form").addEventListener("submit", function(event) {
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
       .then(function(response) {
         console.log("SUCCESS!", response.status, response.text);
-        // Show success message to the user
       }, function(error) {
         console.log("FAILED...", error);
-        // Show error message to the user
       });
 
 });
@@ -84,12 +90,14 @@ textbox.on('input', () =>{
 $("#play-btn").click((event)=> {
   try{
     
-  if(content.length > 0) {
-    const message = new SpeechSynthesisUtterance(content);
+  if(content.length || textbox.val() > 0) {
+    const message = new SpeechSynthesisUtterance(`${content}`);
     speechSynthesis.speak(message);
   }
   else {
-    instructions.text("Please enter some text")
+    const message = new SpeechSynthesisUtterance("I can't read your text! If you don't record it.");
+    speechSynthesis.speak(message);
+    instructions.text("I can't read your text! If you don't record it.")
   }
 }
 catch(error) {
