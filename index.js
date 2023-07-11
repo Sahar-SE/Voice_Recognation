@@ -54,12 +54,13 @@ $("#start-btn").click((event)=> {
   }
 
   recognition.start()
-  btnText.text("Stop")
+  btnText.text("Recording...")
 
 })
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
+  btnText.text("Start")
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
     speechSynthesis.speak(message);
