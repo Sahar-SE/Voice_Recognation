@@ -15,15 +15,24 @@
   <div class="grid grid-cols-3">
     <div  class="col-span-2 border-2">
       <form method="post" id="form" action="" class="">
+
         <div class="">
-          <input id="input-name" rows="6" class="" name="message" name="name" placeholder="Enter Your Full Name" required/>
+          <input id="input-name"
+           rows="6"
+           class="border border-gray-300"
+           name="message"
+           placeholder="Enter Your Full Name" required/>
+        </div>
+
+        <div class="">
+          <textarea id="textbox"
+           rows="6" class="border border-gray-300"
+           rows="6" columns="4"
+           placeholder="Click The Start Button..."required></textarea>
         </div>
         <div class="">
-          <textarea id="textbox border border-gray-300" rows="6" name="message" placeholder="Click The Start Button..."  required></textarea>
-        </div>
-        <button id="play-btn" class="bg-slate-300">Play</button>
-        <button id="start-btn" class="">Start</button>
-        <div class="">
+          <button id="play-btn" class="bg-slate-300">Play</button>
+          <button id="start-btn" class="">Start</button>
           <button id="stop-btn" class="" type="submit">Stop</button>
         </div>
       </form>
