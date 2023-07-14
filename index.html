@@ -12,23 +12,23 @@
 
 </head>
 <body>
-  <div class="">
-    <div  class="">
+  <div class="grid grid-cols-3">
+    <div  class="col-span-2 border-2">
       <form method="post" id="form" action="" class="">
         <div class="">
           <input id="input-name" rows="6" class="" name="message" name="name" placeholder="Enter Your Full Name" required/>
         </div>
         <div class="">
-          <textarea id="textbox border-2 border-inherit" rows="6" class="form-control" name="message" placeholder="Click The Start Button..."  required></textarea>
+          <textarea id="textbox border border-gray-300" rows="6" name="message" placeholder="Click The Start Button..."  required></textarea>
         </div>
-        <button id="play-btn" class="bg-slate-300 btn-block">Play</button>
-        <button id="start-btn" class="btn btn-danger btn-block">Start</button>
-        <div class="form-gruop">
-          <button id="stop-btn" class="btn btn-danger btn-block" type="submit">Stop</button>
+        <button id="play-btn" class="bg-slate-300">Play</button>
+        <button id="start-btn" class="">Start</button>
+        <div class="">
+          <button id="stop-btn" class="" type="submit">Stop</button>
         </div>
       </form>
     </div>
-    <p id="instructions" class="text-blue">Press the start button for recording your voice!</p>
+    <p id="instructions" class="text-blue col-span-1">Press the start button for recording your voice!</p>
   </div>  
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
