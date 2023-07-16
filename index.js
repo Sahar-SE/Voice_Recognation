@@ -14,10 +14,20 @@ var image = $("#robo")
 
 var content = ''
 
+var imageUrls = [
+  "imgs/wavess (1).gif",
+  "imgs/200w_s.gif",
+  "imgs/200.gif",
+];
+
+var currentIndex = 0;
+
 recognition.continuous = true;
 
-const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
-    speechSynthesis.speak(message);
+// window.onload = () => {
+  const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
+  speechSynthesis.speak(message);
+// }
 
 
 // What will happen when start button clicked
