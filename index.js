@@ -16,11 +16,12 @@ var content = ''
 
 var imageUrls = [
   "imgs/wavess (1).gif",
-  "imgs/200w_s.gif",
   "imgs/200.gif",
+  "imgs/200w_s.gif",
+  
 ];
 
-var timeIntervals = [6000, 3000, 5000];
+var timeIntervals = [18000, 13000, 5000];
 
 recognition.continuous = true;
 
@@ -133,9 +134,7 @@ function changeImage(index) {
   setTimeout(() => {
     changeImage(nextIndex);
   }, nextTimeInterval);
-
-
 }
 
 
-setInterval(changeImage, 6000);
+changeImage(0);
