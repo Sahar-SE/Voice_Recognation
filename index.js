@@ -10,6 +10,8 @@ var instructions = $("#instructions")
 
 var btnText = $("#start-btn")
 
+var image = $("#robo")
+
 var content = ''
 
 recognition.continuous = true;
@@ -55,12 +57,15 @@ $("#start-btn").click((event)=> {
 
   recognition.start()
   btnText.text("Recording...")
+  image.attr('src', 'imgs/bbbbb (1).gif');
 
 })
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
+  image.attr('src', 'imgs/wavess (1).gif');
+
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
     speechSynthesis.speak(message);
