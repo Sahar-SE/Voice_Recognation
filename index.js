@@ -20,7 +20,7 @@ var imageUrls = [
   "imgs/200.gif",
 ];
 
-var currentIndex = 0;
+var timeIntervals = [6000, 3000, 5000];
 
 recognition.continuous = true;
 
@@ -123,3 +123,13 @@ catch(error) {
 }
 })
 
+// slider image
+
+function changeImage(index) {
+  image.attr('src', imageUrls[index]);
+  var nextIndex = (index + 1) % imageUrls.length;
+  var nextTimeInterval = timeIntervals[nextIndex];
+
+
+
+setInterval(changeImage, 6000);
