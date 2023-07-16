@@ -130,6 +130,12 @@ function changeImage(index) {
   var nextIndex = (index + 1) % imageUrls.length;
   var nextTimeInterval = timeIntervals[nextIndex];
 
+  setTimeout(() => {
+    changeImage(nextIndex);
+  }, nextTimeInterval);
+
+
+}
 
 
 setInterval(changeImage, 6000);
