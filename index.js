@@ -122,6 +122,8 @@ textbox.on('input', () =>{
   content = $(this).val()
 })
 
+changeImage(0);
+
 $("#play-btn").click((event)=> {
   try{
     
