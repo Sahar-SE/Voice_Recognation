@@ -23,12 +23,29 @@ var imageUrls = [
 
 var timeIntervals = [18000, 13000, 5000];
 
+var interval;
+
 recognition.continuous = true;
 
 // window.onload = () => {
   const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
   speechSynthesis.speak(message);
 // }
+
+// slider image
+
+function changeImage(index) {
+  image.attr('src', imageUrls[index]);
+  var nextIndex = (index + 1) % imageUrls.length;
+  var nextTimeInterval = timeIntervals[nextIndex];
+
+  interval = setTimeout(() => {
+    changeImage(nextIndex);
+  }, nextTimeInterval);
+}
+
+
+changeImage(0);
 
 
 // What will happen when start button clicked
@@ -66,6 +83,7 @@ $("#start-btn").click((event)=> {
     content += ''
   }
 
+  clearInterval(interval);
   recognition.start()
   btnText.text("Recording...")
   image.attr('src', 'imgs/bbbbb (1).gif');
@@ -124,17 +142,3 @@ catch(error) {
 }
 })
 
-// slider image
-
-function changeImage(index) {
-  image.attr('src', imageUrls[index]);
-  var nextIndex = (index + 1) % imageUrls.length;
-  var nextTimeInterval = timeIntervals[nextIndex];
-
-  setTimeout(() => {
-    changeImage(nextIndex);
-  }, nextTimeInterval);
-}
-
-
-changeImage(0);
