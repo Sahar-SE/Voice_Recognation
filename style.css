@@ -1,3 +1,5 @@
-body {
-    background-image: url("imgs/background.jpg");
+.col-span-2 {
+  background-image: url("imgs/bg1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
