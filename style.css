@@ -1,5 +1,8 @@
 .col-span-2 {
+  /* background-image: linear-gradient(to right, #000, #FFF), url('imgs/bg1.jpg'); */
+     
   background-image: url("imgs/bg1.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 635px;
 }
