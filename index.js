@@ -10,12 +10,42 @@ var instructions = $("#instructions")
 
 var btnText = $("#start-btn")
 
+var image = $("#robo")
+
 var content = ''
+
+var imageUrls = [
+  "imgs/wavess (1).gif",
+  "imgs/200.gif",
+  "imgs/200w_s.gif",
+  
+];
+
+var timeIntervals = [18000, 13000, 5000];
+
+var interval;
 
 recognition.continuous = true;
 
-const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
-    speechSynthesis.speak(message);
+// window.onload = () => {
+  const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
+  speechSynthesis.speak(message);
+// }
+
+// slider image
+
+function changeImage(index) {
+  image.attr('src', imageUrls[index]);
+  var nextIndex = (index + 1) % imageUrls.length;
+  var nextTimeInterval = timeIntervals[nextIndex];
+
+  interval = setTimeout(() => {
+    changeImage(nextIndex);
+  }, nextTimeInterval);
+}
+
+
+changeImage(0);
 
 
 // What will happen when start button clicked
@@ -53,14 +83,18 @@ $("#start-btn").click((event)=> {
     content += ''
   }
 
+  clearInterval(interval);
   recognition.start()
   btnText.text("Recording...")
+  image.attr('src', 'imgs/bbbbb (1).gif');
 
 })
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
+  image.attr('src', 'imgs/wavess (1).gif');
+
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
     speechSynthesis.speak(message);
@@ -87,6 +121,8 @@ document.getElementById("form").addEventListener("submit", function(event) {
 textbox.on('input', () =>{
   content = $(this).val()
 })
+
+changeImage(0);
 
 $("#play-btn").click((event)=> {
   try{
