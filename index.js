@@ -125,8 +125,8 @@ document.getElementById("form").addEventListener("submit", function(event) {
 
 // handling Recommendation Button
 
-$("#start-btn").click((event)=> {
-  window.location.replace('recommendations.html')
+$("#rec-btn").click((event)=> {
+  window.location.href ='recommendations.html'
 })
 
 textbox.on('input', () =>{
