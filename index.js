@@ -10,6 +10,8 @@ var instructions = $("#instructions")
 
 var btnText = $("#start-btn")
 
+var btnRec = $("#rec-btn")
+
 var image = $("#robo")
 
 var content = ''
@@ -119,6 +121,10 @@ document.getElementById("form").addEventListener("submit", function(event) {
       });
 
 });
+})
+
+$("#start-btn").click((event)=> {
+  window.location.replace('')
 })
 
 textbox.on('input', () =>{
