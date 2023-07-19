@@ -17,9 +17,9 @@ var image = $("#robo")
 var content = ''
 
 var imageUrls = [
-  "imgs/wavess (1).gif",
-  "imgs/200.gif",
-  "imgs/200w_s.gif",
+  "imgs/giphy (4).gif",
+  "imgs/giphy (1).gif",
+  "imgs/giphy (3).gif",
   
 ];
 
@@ -91,7 +91,7 @@ $("#start-btn").click((event)=> {
   clearInterval(interval);
   recognition.start()
   btnText.text("Recording...")
-  image.attr('src', 'imgs/bbbbb (1).gif');
+  image.attr('src', 'imgs/giphy (5).gif');
 
 })
 
