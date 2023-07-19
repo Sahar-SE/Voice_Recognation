@@ -123,6 +123,8 @@ document.getElementById("form").addEventListener("submit", function(event) {
 });
 })
 
+// handling Recommendation Button
+
 $("#start-btn").click((event)=> {
   window.location.replace('')
 })
