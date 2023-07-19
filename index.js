@@ -123,14 +123,29 @@ document.getElementById("form").addEventListener("submit", function(event) {
 });
 })
 
-// handling Recommendation Button
 
-$("#rec-btn").click((event)=> {
-  window.location.href ='recommendations.html'
-})
+
 
 textbox.on('input', () =>{
   content = $(this).val()
+})
+
+
+
+// handling Recommendation Button
+
+$("#rec-btn").click((event)=> {
+  clearInterval(interval);
+  window.location.href ='recommendations.html'
+  image.attr('src', 'imgs/giphy (2).gif');
+  
+
+})
+
+// handling Back Button
+
+$("#back-btn").click((event)=> {
+  window.location.href ='index.html'
 })
 
 changeImage(0);
