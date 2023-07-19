@@ -21,9 +21,12 @@ var imageUrls = [
   
 ];
 
+
 var timeIntervals = [18000, 13000, 5000];
 
 var interval;
+
+
 
 recognition.continuous = true;
 
@@ -44,8 +47,8 @@ function changeImage(index) {
   }, nextTimeInterval);
 }
 
-
 changeImage(0);
+
 
 
 // What will happen when start button clicked
