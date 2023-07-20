@@ -1,5 +1,6 @@
 .col-span-2 {
   background-repeat: no-repeat;
   background-size: cover;
-  height: 635px;
+  /* height: 635px; */
+  height: auto;
 }
