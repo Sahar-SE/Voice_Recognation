@@ -99,6 +99,7 @@ $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
   image.attr('src', 'imgs/giphy (4).gif');
+  changeImage(0);
 
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
@@ -121,7 +122,6 @@ $("#stop-btn").click((event)=> {
 });
 })
 
- changeImage(0);
 
 textbox.on('input', () =>{
   content = $(this).val()
@@ -140,7 +140,7 @@ $("#rec-btn").click((event)=> {
 $("#play-btn").click((event)=> {
   try{
     
-    var name = $("#input-name").val()   
+  var name = $("#input-name").val()   
 
   if(content.length || textbox.val() > 0) {
     const message = new SpeechSynthesisUtterance(`Hello ${name} This is your text.  ${content}`);
