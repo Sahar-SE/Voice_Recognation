@@ -98,7 +98,8 @@ $("#start-btn").click((event)=> {
 $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
-  image.attr('src', 'imgs/wavess (1).gif');
+  image.attr('src', 'imgs/giphy (4).gif');
+  changeImage(0);
 
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
@@ -107,10 +108,8 @@ $("#stop-btn").click((event)=> {
   (function () {
     emailjs.init("TRPIqukCOOdOsgiXe");
   })();
-
-
-  
-document.getElementById("form").addEventListener("submit", function(event) {
+ 
+  document.getElementById("form").addEventListener("submit", function(event) {
   // Your validation code here
     event.preventDefault();
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
@@ -124,12 +123,9 @@ document.getElementById("form").addEventListener("submit", function(event) {
 })
 
 
-
-
 textbox.on('input', () =>{
   content = $(this).val()
 })
-
 
 
 // handling Recommendation Button
@@ -141,13 +137,10 @@ $("#rec-btn").click((event)=> {
 })
 
 
-
-changeImage(0);
-
 $("#play-btn").click((event)=> {
   try{
     
-    var name = $("#input-name").val()   
+  var name = $("#input-name").val()   
 
   if(content.length || textbox.val() > 0) {
     const message = new SpeechSynthesisUtterance(`Hello ${name} This is your text.  ${content}`);
