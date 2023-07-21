@@ -14,11 +14,15 @@ $("#intro-btn").click((event)=> {
 // handling Author Button
 
 $("#author-btn").click((event)=> {
+  const message = new SpeechSynthesisUtterance("Hi, My author is Sahar Saba Amiri a passionate Software Engineer from Afghanistan. She has graduated from Kabul University. Actually, she is a hardworking girl and worked in different small and large software projects. She is familiar with different software development methodologies such as Agile, Scrum, and Waterfall. She is also familiar with different programming languages such as Java, Ruby, My SQL, Mongo DB, JavaScript and PHP. Also different frameworks such as Bootstrap, Tailwind CSS, React, Redux, Node JS and Express. She Loves helping people, working in teams and learning about new technologies.");
+  speechSynthesis.speak(message);
+
 })
 
 // handling Joke Button
 
 $("#joke-btn").click((event)=> {
+  
 })
 
 // handling qoute Button
