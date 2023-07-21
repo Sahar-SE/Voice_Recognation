@@ -10,6 +10,13 @@ $("#git-btn").click((event)=> {
     window.location.href ='https://github.com/Sahar-SE/Voice_Recognation'
 })
 
+// hover on Github Button
+
+$("#git-btn").hover(() => {
+  const message = new SpeechSynthesisUtterance("My heart is made by stars. If you want me to be a live; put a star on my Github repository. Thank you!")
+  speechSynthesis.speak(message);
+})
+
 // handling time Button
 
 $("#time-btn").click((event)=> {
