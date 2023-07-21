@@ -18,3 +18,8 @@ $("#author-btn").click((event)=> {
 
 $("#joke-btn").click((event)=> {
 })
+
+// handling qoute Button
+
+$("#qoute-btn").click((event)=> {
+})
