@@ -13,3 +13,8 @@ $("#intro-btn").click((event)=> {
 
 $("#author-btn").click((event)=> {
 })
+
+// handling Joke Button
+
+$("#joke-btn").click((event)=> {
+})
