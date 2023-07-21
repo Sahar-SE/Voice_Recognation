@@ -4,7 +4,11 @@ $("#back-btn").click((event)=> {
     window.location.href ='index.html'
 })
 
+// handling Github Button
 
+$("#git-btn").click((event)=> {
+    window.location.href ='https://github.com/Sahar-SE/Voice_Recognation'
+})
 
 // handling time Button
 
