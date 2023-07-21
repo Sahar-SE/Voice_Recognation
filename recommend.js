@@ -8,3 +8,8 @@ $("#back-btn").click((event)=> {
 
 $("#intro-btn").click((event)=> {
 })
+
+// handling Author Button
+
+$("#author-btn").click((event)=> {
+})
