@@ -88,10 +88,10 @@ $("#start-btn").click((event)=> {
     content += ''
   }
 
-  clearInterval(interval);
   recognition.start()
   btnText.text("Recording...")
   image.attr('src', 'imgs/giphy (5).gif');
+  clearInterval(interval);
 
 })
 
