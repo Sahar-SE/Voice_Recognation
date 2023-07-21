@@ -31,6 +31,11 @@ var interval;
 
 
 recognition.continuous = true;
+recognition.interimResults = true;
+
+recognition.onend = function() {
+  recognition.start();
+};
 
 window.onload = () => {
   const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
@@ -62,13 +67,14 @@ recognition.onstart =  () => {
 // when the the recognition is ended
 
 recognition.onspeechend = () => {
-  instructions.text("Recognition stopped")
+  
 }
 
 // When an error occured
 
 recognition.onerror = () => {
-  instructions.text("There is an error!")
+  instructions.text("There is an internet connection error!")
+  btnText.text("start")
 }
 
 // During the recording
@@ -100,6 +106,7 @@ $("#stop-btn").click((event)=> {
   btnText.text("Start")
   image.attr('src', 'imgs/giphy (4).gif');
   changeImage(0);
+  instructions.text("Recognition stopped")
 
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
