@@ -107,10 +107,8 @@ $("#stop-btn").click((event)=> {
   (function () {
     emailjs.init("TRPIqukCOOdOsgiXe");
   })();
-
-
-  
-document.getElementById("form").addEventListener("submit", function(event) {
+ 
+  document.getElementById("form").addEventListener("submit", function(event) {
   // Your validation code here
     event.preventDefault();
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
@@ -123,11 +121,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
 });
 })
 
+ changeImage(0);
+
 textbox.on('input', () =>{
   content = $(this).val()
 })
 
-changeImage(0);
 
 // handling Recommendation Button
 
