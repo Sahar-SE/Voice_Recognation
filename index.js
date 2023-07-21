@@ -32,10 +32,10 @@ var interval;
 
 recognition.continuous = true;
 
-// window.onload = () => {
+window.onload = () => {
   const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
   speechSynthesis.speak(message);
-// }
+}
 
 // slider image
 
