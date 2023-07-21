@@ -2,7 +2,17 @@
 
 $("#back-btn").click((event)=> {
     window.location.href ='index.html'
-  })
+})
+
+
+
+// handling time Button
+
+$("#time-btn").click((event)=> {
+  var currentTime = new Date();
+  const message = new SpeechSynthesisUtterance("The current time is " + currentTime.getHours()+ ' ' + currentTime.getMinutes() + "minutes  and" + currentTime.getSeconds() + " seconds");
+  speechSynthesis.speak(message);
+})
 
 // handling Introduction Button
 
