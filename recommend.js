@@ -29,4 +29,6 @@ $("#joke-btn").click((event)=> {
 // handling qoute Button
 
 $("#qoute-btn").click((event)=> {
+  const message = new SpeechSynthesisUtterance("Actually, I have a lot of favorite qoutes, but one of them is that, 'Build a beautiful life, make a beautiful world. Sahar Saba Amiri' ");
+  speechSynthesis.speak(message);
 })
