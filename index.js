@@ -28,14 +28,12 @@ var timeIntervals = [18000, 13000, 5000];
 
 var interval;
 
-
-
 recognition.continuous = true;
 
-// window.onload = () => {
+window.onload = () => {
   const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
   speechSynthesis.speak(message);
-// }
+}
 
 // slider image
 
@@ -63,12 +61,15 @@ recognition.onstart =  () => {
 
 recognition.onspeechend = () => {
   instructions.text("Recognition stopped")
+  btnText.text("start")
+  changeImage(0);
 }
 
 // When an error occured
 
 recognition.onerror = () => {
-  instructions.text("There is an error!")
+  instructions.text("There is an internet connection error!")
+  btnText.text("start")
 }
 
 // During the recording
@@ -109,8 +110,11 @@ $("#stop-btn").click((event)=> {
     emailjs.init("TRPIqukCOOdOsgiXe");
   })();
  
-  document.getElementById("form").addEventListener("submit", function(event) {
+ document.getElementById("form").addEventListener("submit", function(event) {
+
   // Your validation code here
+
+
     event.preventDefault();
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
       .then(function(response) {
@@ -121,6 +125,7 @@ $("#stop-btn").click((event)=> {
 
 });
 })
+
 
 
 textbox.on('input', () =>{
@@ -144,6 +149,7 @@ $("#play-btn").click((event)=> {
 
   if(content.length || textbox.val() > 0) {
     const message = new SpeechSynthesisUtterance(`Hello ${name} This is your text.  ${content}`);
+    message.rate = 0.6;
     speechSynthesis.speak(message);
   }
   else {
