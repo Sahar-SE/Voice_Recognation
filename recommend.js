@@ -43,13 +43,13 @@ $("#author-btn").click((event)=> {
 // handling Joke Button
 
 $("#joke-btn").click((event)=> {
-  const message = new SpeechSynthesisUtterance("Ha ha ha ha, My favorite joke is that, 'A pair of cows were talking in the field. One says, 'Have you heard about the mad cow disease that is going around?' the other one said, Yeah, makes me glad I'm a penguin. Ha haa ha ha haa haa!,  loool!' ");
+  const message = new SpeechSynthesisUtterance("Ha ha ha ha, My favorite joke is that, 'A pair of cows were talking in the field. One says, 'Have you heard about the mad cow disease that is going around?' the other one said, Yeah, makes me glad I'm a penguin. Ha haa ha ha haa haa!,  lool!' ");
   speechSynthesis.speak(message);
 })
 
 // handling qoute Button
 
 $("#qoute-btn").click((event)=> {
-  const message = new SpeechSynthesisUtterance("Actually, I have a lot of favorite qoutes, but one of them is that, 'Build a beautiful life, make a beautiful world. Sahar Saba Amiri' ");
+  const message = new SpeechSynthesisUtterance("Actually, I have a lot of favorite qoutes, but one of them is that, 'Build a beautiful life, make a beautiful world.' ");
   speechSynthesis.speak(message);
 })
