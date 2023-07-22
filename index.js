@@ -63,6 +63,8 @@ recognition.onstart =  () => {
 
 recognition.onspeechend = () => {
   instructions.text("Recognition stopped")
+  btnText.text("start")
+  changeImage(0);
 }
 
 // When an error occured
