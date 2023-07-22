@@ -22,6 +22,7 @@ $("#git-btn").hover(() => {
 $("#time-btn").click((event)=> {
   var currentTime = new Date();
   const message = new SpeechSynthesisUtterance("The current time is " + currentTime.getHours()+ ' ' + currentTime.getMinutes() + "minutes  and" + currentTime.getSeconds() + " seconds");
+  message.rate = 0.6;
   speechSynthesis.speak(message);
 })
 
@@ -44,6 +45,7 @@ $("#author-btn").click((event)=> {
 
 $("#joke-btn").click((event)=> {
   const message = new SpeechSynthesisUtterance("Ha ha ha ha, My favorite joke is that, 'A pair of cows were talking in the field. One says, 'Have you heard about the mad cow disease that is going around?' the other one said, Yeah, makes me glad I'm a penguin. Ha haa ha ha haa haa!,  lool!' ");
+  message.rate = 0.6;
   speechSynthesis.speak(message);
 })
 

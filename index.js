@@ -28,8 +28,6 @@ var timeIntervals = [18000, 13000, 5000];
 
 var interval;
 
-
-
 recognition.continuous = true;
 
 window.onload = () => {
@@ -151,6 +149,7 @@ $("#play-btn").click((event)=> {
 
   if(content.length || textbox.val() > 0) {
     const message = new SpeechSynthesisUtterance(`Hello ${name} This is your text.  ${content}`);
+    message.rate = 0.6;
     speechSynthesis.speak(message);
   }
   else {
