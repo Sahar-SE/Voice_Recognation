@@ -1,10 +1,3 @@
-var link = document.createElement('link');
-
-link.rel = 'stylesheet';
-link.href = 'https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css';
-
-document.head.appendChild(link);
-
 var speechRecognition = window.webkitSpeechRecognition
 
 var recognition = new speechRecognition()
@@ -119,9 +112,11 @@ $("#stop-btn").click((event)=> {
     emailjs.init("TRPIqukCOOdOsgiXe");
   })();
  
-  document.getElementById("form").addEventListener("submit", function(event) {
+ document.getElementById("form").addEventListener("submit", function(event) {
+
   // Your validation code here
-  
+
+
     event.preventDefault();
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
       .then(function(response) {
@@ -132,6 +127,7 @@ $("#stop-btn").click((event)=> {
 
 });
 })
+
 
 
 textbox.on('input', () =>{
