@@ -148,8 +148,7 @@ $("#play-btn").click((event)=> {
   var name = $("#input-name").val()   
 
   if(content.length || textbox.val() > 0) {
-    const message = new SpeechSynthesisUtterance(`Hello ${name} This is your text.  ${content}`);
-    message.rate = 0.6;
+    const message = new SpeechSynthesisUtterance(`Hey ${name} This is your text.  ${content}`);
     speechSynthesis.speak(message);
   }
   else {

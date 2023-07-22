@@ -44,8 +44,7 @@ $("#author-btn").click((event)=> {
 // handling Joke Button
 
 $("#joke-btn").click((event)=> {
-  const message = new SpeechSynthesisUtterance("Ha ha ha ha, My favorite joke is that, 'A pair of cows were talking in the field. One says, 'Have you heard about the mad cow disease that is going around?' the other one said, Yeah, makes me glad I'm a penguin. Ha haa ha ha haa haa!,  lool!' ");
-  message.rate = 0.6;
+  const message = new SpeechSynthesisUtterance("Ha ha ha ha, My favorite joke is that, 'A pair of cows were talking in the field. One says, 'Have you heard about the mad cow disease that is going around?' the other one said, Yeah, makes me glad I'm a penguin. Ha ha ha ha!,  lool!' ");
   speechSynthesis.speak(message);
 })
 
