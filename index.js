@@ -121,23 +121,7 @@ $("#stop-btn").click((event)=> {
  
   document.getElementById("form").addEventListener("submit", function(event) {
   // Your validation code here
-  var requiredInputs = $('input[required]');
-  var isValid = true;
   
-  requiredInputs.each(function() {
-      if ($(this).val() === '') {
-          $(this).addClass('border-red-500');
-          isValid = false;
-      } else {
-          $(this).removeClass('border-red-500');
-      }
-  });
-
-  if (!isValid) {
-      e.preventDefault();
-      alert('Please fill all required fields');
-  }
-
     event.preventDefault();
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
       .then(function(response) {
