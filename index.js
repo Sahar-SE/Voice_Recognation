@@ -19,8 +19,7 @@ var content = ''
 var imageUrls = [
   "imgs/giphy (4).gif",
   "imgs/giphy (1).gif",
-  "imgs/giphy (3).gif",
-  
+  "imgs/giphy (3).gif",  
 ];
 
 
@@ -48,8 +47,6 @@ function changeImage(index) {
 }
 
 changeImage(0);
-
-
 
 // What will happen when start button clicked
 
@@ -81,8 +78,6 @@ recognition.onresult = (event) => {
   textbox.val(content)
 }
 
-
-
 $("#start-btn").click((event)=> {
 
   if(content.length) {
@@ -111,10 +106,6 @@ $("#stop-btn").click((event)=> {
   })();
  
  document.getElementById("form").addEventListener("submit", function(event) {
-
-  // Your validation code here
-
-
     event.preventDefault();
     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
       .then(function(response) {
@@ -126,29 +117,24 @@ $("#stop-btn").click((event)=> {
 });
 })
 
-
-
 textbox.on('input', () =>{
   content = $(this).val()
 })
-
 
 // handling Recommendation Button
 
 $("#rec-btn").click((event)=> {
   clearInterval(interval);
   window.location.href ='recommendations.html'
-
 })
-
 
 $("#play-btn").click((event)=> {
   try{
     
-  var name = $("#input-name").val()   
+  var input_name = $("#input-name").val()   
 
   if(content.length || textbox.val() > 0) {
-    const message = new SpeechSynthesisUtterance(`Hey ${name} This is your text.  ${content}`);
+    const message = new SpeechSynthesisUtterance(`Hey ${input_name} This is your text.  ${content}`);
     speechSynthesis.speak(message);
   }
   else {
