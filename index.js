@@ -1,5 +1,6 @@
+// Calling speech recognition from window and store it in a variable.
 var speechRecognition = window.webkitSpeechRecognition
-
+// Creating an instance of speech recognition object.
 var recognition = new speechRecognition()
 
 var message = $("#message")
@@ -13,27 +14,27 @@ var btnText = $("#start-btn")
 var image = $("#robo")
 
 var content = ''
-
+// An array for setting images anterval
 var imageUrls = [
   './imgs/giphy4.gif',
   './imgs/giphy1.gif',
   './imgs/giphy3.gif',  
 ];
 
-
+// Creating an array for duration of each image
 var timeIntervals = [18000, 13000, 5000];
 
 var interval;
-
+// Recognition continous will continue changing voice to text till the stop button clicked
 recognition.continuous = true;
 
+// This text will be read by Robo at each refresh of the page
 window.onload = () => {
   const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
   speechSynthesis.speak(message);
 }
 
 // slider image
-
 function changeImage(index) {
   image.attr('src', imageUrls[index]);
   var nextIndex = (index + 1) % imageUrls.length;
@@ -52,7 +53,7 @@ recognition.onstart =  () => {
   instructions.text("Voice Recognition is on!")
 }
 
-// when the the recognition is ended
+// When the the recognition is ended this will happened
 
 recognition.onspeechend = () => {
   instructions.text("Recognition stopped")
@@ -60,7 +61,7 @@ recognition.onspeechend = () => {
   changeImage(0);
 }
 
-// When an error occured
+// When an error occured this will happened
 
 recognition.onerror = () => {
   instructions.text("There is an internet connection error!")
@@ -76,6 +77,7 @@ recognition.onresult = (event) => {
   message.val(content)
 }
 
+// handling start button
 $("#start-btn").click((event)=> {
 
   if(content.length) {
@@ -88,6 +90,8 @@ $("#start-btn").click((event)=> {
   clearInterval(interval);
 })
 
+// handling stop button
+
 $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
@@ -97,25 +101,27 @@ $("#stop-btn").click((event)=> {
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
     speechSynthesis.speak(message);
 
-//   (function () {
-//     emailjs.init("TRPIqukCOOdOsgiXe");
-//   })();
+  (function () {
+    emailjs.init("TRPIqukCOOdOsgiXe");
+  })();
  
-//  document.getElementById("form").addEventListener("click", function(event) {
-//     event.preventDefault();
-//     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
-//       .then(function(response) {
-//         console.log("SUCCESS!", response.status, response.text);
-//       }, function(error) {
-//         console.log("FAILED...", error);
-//       });
+ document.getElementById("form").addEventListener("click", function(event) {
+    event.preventDefault();
+    emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
+      .then(function(response) {
+        console.log("SUCCESS!", response.status, response.text);
+      }, function(error) {
+        console.log("FAILED...", error);
+      });
 
-// });
+});
 })
 
 message.on('input', () =>{
   content = $(this).val()
 })
+
+// handling play button
 
 $("#play-btn").click((event)=> {
   try{
@@ -147,6 +153,5 @@ $("#rec-btn").click((event)=> {
 // handling Publish Button
 $("#pub-btn").click(()=> {
   window.location.href = 'publications.php'
-  // window.alert('Just Click this button if you want everyone to read it. Otherwise keep it secrate!');
 })
 

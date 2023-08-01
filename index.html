@@ -15,8 +15,10 @@
 <body>
   <div class="grid grid-cols-3">
     <div  class="config md:h-screen col-span-2 pt-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-tr-full rounded-br-full">
-      <form id="form" action="insertionData.php" method="post">
 
+      <!-- Form to change the Speech to text -->
+
+      <form id="form" action="insertionData.php" method="post">
         <div class="p-5">
           <input id="name"
            rows="6"
@@ -35,6 +37,8 @@
         </div>      
       </form>
 
+      <!-- Buttons -->
+
       <div class="p-5 mt-44 md:mt-0">
         <button id="start-btn" class="p-5 bg-lime-500 hover:bg-lime-400 text-white font-bold py-2 px-4 border-b-4 border-lime-700 hover:border-lime-500 rounded-full italic md:rounded">Start</button>
         <button id="stop-btn" class="p-5 bg-rose-500 hover:bg-rose-400 text-white font-bold py-2 px-4 border-b-4 border-rose-700 hover:border-rose-500 rounded-full italic md:rounded">Stop</button>
@@ -43,9 +47,12 @@
         <a href="publications.php" class="p-5 bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-indigo-800 hover:border-indigo-700 italic rounded-full md:mt-0 md:rounded">publications</a>
       </div>
     </div>
+
+    <!-- Instructions, footer and Robo -->
     <div class="col-span-1 relative">
       <p id="instructions" class="absolute top-36 bg-slate-700 text-white p-2 text-xs md:text-base rounded-t-full rounded-bl-full mr-2 md:mr-1 italic">Press the start button for recording your voice!</p>
       <img id="robo" src="./imgs/giphy4.gif" alt="robo" class="mt-56 md:mt-32 w-80 md:ml-16">
+    
       <footer>
         <p class="text-slate-300 text-xs p-2 md:p-5 mt-24">Propared By: Sahar Saba Amiri</p>
       </footer>
