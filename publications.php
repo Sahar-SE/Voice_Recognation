@@ -13,11 +13,10 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gradient-to-r from-cyan-500 to-blue-500">
-  <div class="">
   <div class="rounded-full w-16 h-16 bg-lime-500 fixed top-1 right-1 z-50 ">
     <a href="index.html"><img src="imgs/house.png" class="absolute top-4 left-4 w-8 h-8 rounded-full"/></a>
   </div>
-  </div>
+
 
     <div class='flex flex-col justify-center items-center mt-8 font-sans'>
      <?php
