@@ -14,7 +14,7 @@ Voice Recognition System is an innovative web-based application that uses cuttin
 9. [Contact](#contact)
 
 ## About The Project 📃
-This project aims to change the speech to text and text to speech with the help of the web application. The web application is developed using JavaScript, HTML, PHP, SQL, and Tailwind CSS. The web app will talk with you through a bot called Robo, change ypur voice to text and give you some recommendations, Publish your texts to a public page and store ypur texts to a MySQL database.
+This project aims to change the speech to text and text to speech with the help of the web application. The web application is developed using JavaScript, HTML, PHP, SQL, and Tailwind CSS. The web app will talk with you through a bot called Robo, change ypur voice to text and give you some recommendations, Publish your texts to a public page and store your texts to a MySQL database.
 
 ## Built With 👩‍🔧
 - JavaScript
