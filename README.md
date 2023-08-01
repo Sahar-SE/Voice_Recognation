@@ -40,10 +40,13 @@ To get a local copy up and running, follow these simple steps.
 
 ## Usage 📖
 Home page:
+![Screenshot (425)](https://github.com/Sahar-SE/Voice_Recognation/assets/98980908/93a9a00d-50e0-4af6-ad0f-3bd25cebca61) 
 
 Recommendations page:
+![Screenshot (426)](https://github.com/Sahar-SE/Voice_Recognation/assets/98980908/1c155129-a646-4ffd-8467-fe05998e3ba3)
 
 Publications page:
+![Screenshot (427)](https://github.com/Sahar-SE/Voice_Recognation/assets/98980908/0884653e-e7ce-4576-a9e5-46cc23d6e215)
 
 ## Contributing ✨ 
 Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions are **greatly appreciated**.
