@@ -1,5 +1,6 @@
+// Calling speech recognition from window and store it in a variable.
 var speechRecognition = window.webkitSpeechRecognition
-
+// Creating an instance of speech recognition object.
 var recognition = new speechRecognition()
 
 var message = $("#message")
