@@ -101,16 +101,16 @@ $("#stop-btn").click((event)=> {
     emailjs.init("TRPIqukCOOdOsgiXe");
   })();
  
-//  document.getElementById("form").addEventListener("click", function(event) {
-//     event.preventDefault();
-//     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
-//       .then(function(response) {
-//         console.log("SUCCESS!", response.status, response.text);
-//       }, function(error) {
-//         console.log("FAILED...", error);
-//       });
+ document.getElementById("form").addEventListener("click", function(event) {
+    event.preventDefault();
+    emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
+      .then(function(response) {
+        console.log("SUCCESS!", response.status, response.text);
+      }, function(error) {
+        console.log("FAILED...", error);
+      });
 
-// });
+});
 })
 
 message.on('input', () =>{
