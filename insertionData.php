@@ -1,5 +1,9 @@
 <?php
+
+  // Insertion into the database
   include 'dbConnect.php';
+
+  // Accessing form names by POST super global variable
   $name = $_POST['name'];
   $message = $_POST['message'];
   $sql="INSERT INTO article (author, passage) VALUES (?,?) ";
