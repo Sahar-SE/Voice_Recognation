@@ -53,7 +53,7 @@ recognition.onstart =  () => {
   instructions.text("Voice Recognition is on!")
 }
 
-// When the the recognition is ended this will happen
+// When the the recognition is ended this will happened
 
 recognition.onspeechend = () => {
   instructions.text("Recognition stopped")
@@ -61,7 +61,7 @@ recognition.onspeechend = () => {
   changeImage(0);
 }
 
-// When an error occured
+// When an error occured this will happened
 
 recognition.onerror = () => {
   instructions.text("There is an internet connection error!")
