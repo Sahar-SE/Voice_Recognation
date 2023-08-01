@@ -21,20 +21,20 @@ var imageUrls = [
   './imgs/giphy3.gif',  
 ];
 
-
+// Creating an array for duration of each image
 var timeIntervals = [18000, 13000, 5000];
 
 var interval;
-
+// Recognition continous will continue changing voice to text till the stop button clicked
 recognition.continuous = true;
 
+// This text will be read by Robo at each refresh of the page
 window.onload = () => {
   const message = new SpeechSynthesisUtterance("Hello, I am Rooboo I have been created by Sahar Sabah Amiri. I am here to help you. Please enter your name, and click the start button that I can record your voice.");
   speechSynthesis.speak(message);
 }
 
 // slider image
-
 function changeImage(index) {
   image.attr('src', imageUrls[index]);
   var nextIndex = (index + 1) % imageUrls.length;
@@ -53,7 +53,7 @@ recognition.onstart =  () => {
   instructions.text("Voice Recognition is on!")
 }
 
-// when the the recognition is ended
+// When the the recognition is ended this will happen
 
 recognition.onspeechend = () => {
   instructions.text("Recognition stopped")
