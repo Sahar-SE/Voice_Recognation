@@ -2,24 +2,22 @@ var speechRecognition = window.webkitSpeechRecognition
 
 var recognition = new speechRecognition()
 
-var textbox = $("#textbox")
+var message = $("#message")
 
-var name = $("#input-name")
+var name = $("#name")
 
 var instructions = $("#instructions")
 
 var btnText = $("#start-btn")
-
-var btnRec = $("#rec-btn")
 
 var image = $("#robo")
 
 var content = ''
 
 var imageUrls = [
-  "imgs/giphy (4).gif",
-  "imgs/giphy (1).gif",
-  "imgs/giphy (3).gif",  
+  './imgs/giphy4.gif',
+  './imgs/giphy1.gif',
+  './imgs/giphy3.gif',  
 ];
 
 
@@ -58,7 +56,7 @@ recognition.onstart =  () => {
 
 recognition.onspeechend = () => {
   instructions.text("Recognition stopped")
-  btnText.text("start")
+  btnText.text("Start")
   changeImage(0);
 }
 
@@ -66,7 +64,7 @@ recognition.onspeechend = () => {
 
 recognition.onerror = () => {
   instructions.text("There is an internet connection error!")
-  btnText.text("start")
+  btnText.text("Start")
 }
 
 // During the recording
@@ -75,7 +73,7 @@ recognition.onresult = (event) => {
   var current = event.resultIndex;
   var transcript = event.results[current][0].transcript
   content += transcript
-  textbox.val(content)
+  message.val(content)
 }
 
 $("#start-btn").click((event)=> {
@@ -86,55 +84,46 @@ $("#start-btn").click((event)=> {
 
   recognition.start()
   btnText.text("Recording...")
-  image.attr('src', 'imgs/giphy (5).gif');
+  image.attr('src', './imgs/giphy5.gif');
   clearInterval(interval);
-
 })
 
 $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
-  image.attr('src', 'imgs/giphy (4).gif');
+  image.attr('src', './imgs/giphy4.gif');
   changeImage(0);
-
 
   const message = new SpeechSynthesisUtterance("If you want to check your text, please click the play button. And if you find any spelling mistake or grammar mistake, please correct it by Editing the text. Thank you!");
     speechSynthesis.speak(message);
 
-  (function () {
-    emailjs.init("TRPIqukCOOdOsgiXe");
-  })();
+//   (function () {
+//     emailjs.init("TRPIqukCOOdOsgiXe");
+//   })();
  
- document.getElementById("form").addEventListener("submit", function(event) {
-    event.preventDefault();
-    emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
-      .then(function(response) {
-        console.log("SUCCESS!", response.status, response.text);
-      }, function(error) {
-        console.log("FAILED...", error);
-      });
+//  document.getElementById("form").addEventListener("click", function(event) {
+//     event.preventDefault();
+//     emailjs.sendForm("service_7wz4weo", "template_3cxrqnh", this)
+//       .then(function(response) {
+//         console.log("SUCCESS!", response.status, response.text);
+//       }, function(error) {
+//         console.log("FAILED...", error);
+//       });
 
-});
+// });
 })
 
-textbox.on('input', () =>{
+message.on('input', () =>{
   content = $(this).val()
-})
-
-// handling Recommendation Button
-
-$("#rec-btn").click((event)=> {
-  clearInterval(interval);
-  window.location.href ='recommendations.html'
 })
 
 $("#play-btn").click((event)=> {
   try{
     
-  var input_name = $("#input-name").val()   
+  var name = $("#name").val()   
 
-  if(content.length || textbox.val() > 0) {
-    const message = new SpeechSynthesisUtterance(`Hey ${input_name} This is your text.  ${content}`);
+  if(content.length || message.val() > 0) {
+    const message = new SpeechSynthesisUtterance(`Hey ${name} This is your text.  ${content}`);
     speechSynthesis.speak(message);
   }
   else {
@@ -146,5 +135,18 @@ $("#play-btn").click((event)=> {
 catch(error) {
   instructions.text("Text finished!")
 }
+})
+
+// handling Recommendation Button
+
+$("#rec-btn").click((event)=> {
+  clearInterval(interval);
+  window.location.href = 'recommendations.html'
+})
+
+// handling Publish Button
+$("#pub-btn").click(()=> {
+  window.location.href = 'publications.php'
+  // window.alert('Just Click this button if you want everyone to read it. Otherwise keep it secrate!');
 })
 
