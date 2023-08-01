@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 01, 2023 at 07:22 PM
+-- Generation Time: Aug 01, 2023 at 08:08 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -39,10 +39,9 @@ CREATE TABLE `article` (
 --
 
 INSERT INTO `article` (`id`, `author`, `passage`) VALUES
-(9, 'Saba Amiri1', 'I am here to help you. Please enter your name and click the start button that I can record your voice.He something Emery won. This is your text. I am here to help you.Please enter your name and click the start button that I can record your voice.'),
-(10, 'Saba Amiri', 'I am here to help you. Please enter your name and click the start button that I can record your voice.'),
-(12, 'Saba Amiri', 'Bellevue.Please enter your name and click the start button that I can record your voice.'),
-(46, 'sahar ibnas', 'Uh, hero.Your name is not here so your name is Rubio and I just wanted to say that I hope your work correctly while I\'m representing your project to the interviewer and it will help me to become successful at MLH.I just want to say something else also because you know, as you know, we have to.And have a good design and when I talk a lot and we will have more more good design in on on our publications page.I don\'t know why you are stopping stop recording at production mode but in my local PC are doing great chi.');
+(51, 'Sahar Saba Amiri', 'Hello everyone, the page that you are locating right now is a public page and if you publish your text everyone who use this app can read it. So, please share beneficial information in here that everyone can use it. I am happy that I could develop a basic version of Robo bot with JavaScript, PHP and SQL I will try to change its version to an AI version at future. For now, enjoy the App And support me by sharing it and put a star on my GitHub repositories. https://github.com/Sahar-SE'),
+(52, 'Bill Gates', 'Gates often shares the idea that failure is a great teacher. He believes that success can sometimes lead to arrogance, and failure, on the other hand, provides a chance to learn and grow. He has been quoted saying, \"It\'s fine to celebrate success but it is more important to heed the lessons of failure\".\r\nGates is known for his philanthropic efforts, especially in healthcare and education. He often emphasizes the importance of investing in the poor and making the world a sustainable place for everyone. He has been quoted saying, \"We make the future sustainable when we invest in the poor, not when we insist on their suffering\".'),
+(53, 'Mark Zuckerberg', 'Zuckerberg talks about overcoming self-doubt and believing in oneself. He discusses his early days at Facebook, when he felt like an imposter and questioned if he was doing the right thing. He emphasizes that it\'s normal to feel unsure when you\'re doing something that hasn\'t been done before, and it\'s important to keep moving forward.\r\nZuckerberg believes that creating a sense of purpose for others is as important as finding your own. He discusses the importance of taking on meaningful projects together, redefining equality, and building community across the world. He emphasizes that great things are achieved when people come together for a common goal.');
 
 --
 -- Indexes for dumped tables
@@ -62,7 +61,7 @@ ALTER TABLE `article`
 -- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
