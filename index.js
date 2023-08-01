@@ -90,6 +90,8 @@ $("#start-btn").click((event)=> {
   clearInterval(interval);
 })
 
+// handling stop button
+
 $("#stop-btn").click((event)=> {
   recognition.stop();
   btnText.text("Start")
@@ -118,6 +120,8 @@ $("#stop-btn").click((event)=> {
 message.on('input', () =>{
   content = $(this).val()
 })
+
+// handling play button
 
 $("#play-btn").click((event)=> {
   try{
