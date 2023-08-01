@@ -14,36 +14,38 @@
 </head>
 <body>
   <div class="grid grid-cols-3">
-    <div  class="config col-span-2 pt-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-tr-full rounded-br-full">
-      <form method="post" id="form" action="" class="">
+    <div  class="config md:h-screen col-span-2 pt-24 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-tr-full rounded-br-full">
+      <form id="form" action="insertionData.php" method="post">
 
         <div class="p-5">
-          <input id="input-name"
+          <input id="name"
            rows="6"
-           class="border border-gray-300 rounded-md w-5/6 h-12 p-2"
+           class="border border-gray-300 rounded-md w-3/4 h-12 p-2"
            name="name"
            placeholder="Enter Your Full Name" required/>
+           <button type="submit" class="hidden md:inline-block h-12 bg-cyan-400 hover:bg-cyan-300 text-white font-bold py-2 px-4 border-b-4 border-cyan-500 hover:border-cyan-500 mt-2 md:mt-1 rounded">Publish</button>
+           <button type="submit" class="inline-block md:hidden bg-cyan-400 hover:bg-cyan-300 text-white font-bold border-cyan-500 hover:border-cyan-500 rounded-full w-8 h-8 text-base font-bold" title="Just click this button if you want everyone to read your text!">+</button>
         </div>
 
         <div class="p-5">
-          <textarea id="textbox"
-           rows="8" class="border border-gray-300 resize rounded-md w-5/6 p-2"
+          <textarea id="message"
+           rows="10" class="border border-gray-300 resize rounded-md w-5/6 p-2"
            placeholder="You can't write any text in here. Click The Start Button and Talk. Your text will appear here..."
            name="message" required readonly></textarea>
-        </div>
-
-        <div class="p-5 mt-60 md:mt-0">
-          <button id="start-btn" class="p-5 bg-lime-500 hover:bg-lime-400 text-white font-bold py-2 px-4 border-b-4 border-lime-700 hover:border-lime-500 rounded">Start</button>
-          <button id="stop-btn" class="p-5 bg-rose-500 hover:bg-rose-400 text-white font-bold py-2 px-4 border-b-4 border-rose-700 hover:border-rose-500 rounded" type="submit">Stop</button>
-          <button id="play-btn" class="p-5 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded">Play</button>
-          <button id="rec-btn" class="p-5 bg-yellow-400 hover:bg-yellow-300 text-white font-bold py-2 px-4 border-b-4 border-yellow-500 hover:border-yellow-500 mt-2 md:mt-1 rounded">Recommendations</button>
-        </div>
+        </div>      
       </form>
-      
+
+      <div class="p-5 mt-44 md:mt-0">
+        <button id="start-btn" class="p-5 bg-lime-500 hover:bg-lime-400 text-white font-bold py-2 px-4 border-b-4 border-lime-700 hover:border-lime-500 rounded-full italic md:rounded">Start</button>
+        <button id="stop-btn" class="p-5 bg-rose-500 hover:bg-rose-400 text-white font-bold py-2 px-4 border-b-4 border-rose-700 hover:border-rose-500 rounded-full italic md:rounded">Stop</button>
+        <button id="play-btn" class="p-5 bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded-full italic md:rounded">Play</button>
+        <button id="rec-btn" class="p-5 bg-yellow-400 hover:bg-yellow-300 text-white font-bold py-2 px-4 border-b-4 border-yellow-500 hover:border-yellow-500 rounded-full italic mt-2 mb-4 md:mt-0 md:rounded">Recommendations</button>
+        <a href="publications.php" class="p-5 bg-indigo-700 hover:bg-indigo-600 text-white font-bold py-2 px-4 border-b-4 border-indigo-800 hover:border-indigo-700 italic rounded-full md:mt-0 md:rounded">publications</a>
+      </div>
     </div>
     <div class="col-span-1 relative">
-      <p id="instructions" class="absolute top-36 bg-slate-700 text-white p-2 text-xs md:text-base rounded-t-full rounded-bl-full mr-2 md:mr-1">Press the start button for recording your voice!</p>
-      <img id="robo" src="imgs/giphy (1).gif" alt="robo" class="mt-56 md:mt-32 w-80 md:ml-16">
+      <p id="instructions" class="absolute top-36 bg-slate-700 text-white p-2 text-xs md:text-base rounded-t-full rounded-bl-full mr-2 md:mr-1 italic">Press the start button for recording your voice!</p>
+      <img id="robo" src="./imgs/giphy4.gif" alt="robo" class="mt-56 md:mt-32 w-80 md:ml-16">
       <footer>
         <p class="text-slate-300 text-xs p-2 md:p-5 mt-24">Propared By: Sahar Saba Amiri</p>
       </footer>
