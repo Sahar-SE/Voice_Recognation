@@ -77,6 +77,7 @@ recognition.onresult = (event) => {
   message.val(content)
 }
 
+// handling start button
 $("#start-btn").click((event)=> {
 
   if(content.length) {
