@@ -14,7 +14,7 @@ var btnText = $("#start-btn")
 var image = $("#robo")
 
 var content = ''
-
+// An array for setting images anterval
 var imageUrls = [
   './imgs/giphy4.gif',
   './imgs/giphy1.gif',
