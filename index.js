@@ -147,6 +147,5 @@ $("#rec-btn").click((event)=> {
 // handling Publish Button
 $("#pub-btn").click(()=> {
   window.location.href = 'publications.php'
-  // window.alert('Just Click this button if you want everyone to read it. Otherwise keep it secrate!');
 })
 
